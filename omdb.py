@@ -24,16 +24,21 @@ title = input("Enter movie title: ")
 
 moviedict = dict_by_title(apikey, title)
 
-print("----------------------------")
 
-print(moviedict["Title"] + "-(" + moviedict["Year"] + ")")
-print(moviedict["Runtime"] + " Language: " + moviedict["Language"])
-print("Dir. " + moviedict["Director"])
 
-print("----------------------------")
+if moviedict["Response"] == "True":
+    print("----------------------------")
 
-print(moviedict["Plot"])
+    print(moviedict["Title"] + "-(" + moviedict["Year"] + ")")
+    print(moviedict["Runtime"] + " Language: " + moviedict["Language"])
+    print("Dir. " + moviedict["Director"])
 
-print("----------------------------")
+    print("----------------------------")
 
-print("Actors: " + moviedict["Actors"])
+    print(moviedict["Plot"])
+
+    print("----------------------------")
+
+    print("Actors: " + moviedict["Actors"])
+else:
+    print("no such movie, there isn't any such movie.")
